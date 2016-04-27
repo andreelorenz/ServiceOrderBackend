@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app 
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" 
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+    <servlet>
+        <servlet-name>WebServiceOrder</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>javax.ws.rs.Application</param-name>
+            <param-value>com.java.connection.WebServiceOrder</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+    <!-- The mapping for the default servlet -->
+    <servlet-mapping>
+        <servlet-name>com.java.connection.WebServiceOrder</servlet-name>
+        <url-pattern>/service-order</url-pattern>
+    </servlet-mapping>
+   
+    <!-- ==================== Default Welcome File List ===================== -->
+    <!-- When a request URI refers to a directory, the default servlet looks  -->
+    <!-- for a "welcome file" within that directory and, if present,          -->
+    <!-- to the corresponding resource URI for display.  If no welcome file   -->
+    <!-- is present, the default servlet either serves a directory listing,   -->
+    <!-- or returns a 404 status, depending on how it is configured.          -->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
