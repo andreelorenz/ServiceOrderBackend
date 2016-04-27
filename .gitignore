@@ -8,3 +8,4 @@ gradle-app.setting
 /classes/
 *.project
 *.classpath
+*.iml
