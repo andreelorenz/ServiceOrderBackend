@@ -9,3 +9,6 @@ gradle-app.setting
 *.project
 *.classpath
 *.iml
+/User/build/
+/ServiceOrderService/build/
+/Person/build/

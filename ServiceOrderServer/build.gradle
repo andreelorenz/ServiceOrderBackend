@@ -31,7 +31,7 @@ buildscript {
 }
 
 dependencies {
-   
+
     def tomcatVersion = '7.0.59'
     tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
            "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
@@ -67,8 +67,12 @@ dependencies {
     compile 'com.sun.faces:jsf-api:2.2.13'
     
     compile 'com.sun.faces:jsf-impl:2.2.13'
-
     
+    compile project(':User')
+    compile project(':Person')
+    testCompile project (':User')
+    testCompile project (':Person')
+
     providedCompile 'javax.servlet:javax.servlet-api:3.1.0',
                 'javax.servlet:jsp-api:2.0'
     

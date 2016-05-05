@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package br.com.wso.user;
+package br.com.wso.person.controller;
 
-import br.com.wso.entity.User;
-import com.mongodb.DBObject;
+import br.com.wso.person.entity.Person;
 import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -19,30 +13,26 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-/**
- *
- * @author Andre
- */
-@Path("user")
-public class UserController {
+@Path("person")
+public class PersonController {
 
-    UserRepository repository = new UserRepository();
+    PersonRepository repository = new PersonRepository();
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<User> getUsers() throws Exception {
-        return repository.findAllUser();
+    public List<Person> getPeople() throws Exception {
+        return repository.findAllPerson();
     }
 
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response buscarChamado(@PathParam("id") Long id) {
-        User user = repository.findUser(id);
-        if (user == null) {
+        Person person = repository.findPerson(id);
+        if (person == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         } else {
-            return Response.ok(user).build();
+            return Response.ok(person).build();
         }
 
     }
@@ -50,11 +40,11 @@ public class UserController {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response save(User user) throws Exception {
-        if (user == null) {
+    public Response save(Person person) throws Exception {
+        if (person == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         } else {
-            User ret = repository.addUser(user);
+            Person ret = repository.addPerson(person);
             return Response.ok(ret).build();
         }
     }
@@ -62,12 +52,12 @@ public class UserController {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response update(User user) throws Exception {
-        if (user == null || user.getId() == null) {
+    public Response update(Person person) throws Exception {
+        if (person == null || person.getId() == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         } else {
-            repository.editUser(user);
-            return Response.ok(user).build();
+            repository.editPerson(person);
+            return Response.ok(person).build();
         }
     }
 
@@ -76,12 +66,12 @@ public class UserController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response remover(@PathParam("id") Long id) {
-        User user = repository.findUser(id);
-        if (user == null || user.getId() == null) {
+        Person person = repository.findPerson(id);
+        if (person == null || person.getId() == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         } else {
-            repository.remove(user);
-            return Response.ok(user).build();
+            repository.removePerson(person);
+            return Response.ok(person).build();
         }
     }
 }

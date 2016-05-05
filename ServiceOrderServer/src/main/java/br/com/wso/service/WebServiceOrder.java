@@ -1,7 +1,8 @@
-package br.com.wso.connection;
+package br.com.wso.service;
 
 
-import br.com.wso.user.UserController;
+import br.com.wso.person.controller.PersonController;
+import br.com.wso.user.controller.UserController;
 import java.util.HashSet;
 import java.util.Set;
 import javax.ws.rs.ApplicationPath;
@@ -19,6 +20,7 @@ public class WebServiceOrder extends Application {
 
     public void configure(Set<Class<?>> resource) {
         resource.add(UserController.class);
+        resource.add(PersonController.class);
     }
 
 }

@@ -1,25 +1,25 @@
-package br.com.wso.entity;
+package br.com.wso.user.entity;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-public class User implements Serializable{
+public class User implements Serializable {
 
     private Long id;
-    private String name;
     private String email;
     private String login;
     private String password;
+    private Long idPerson;
     private int access;
 
     public User() {
     }
 
-    public User(String name, String email, String login, String password, int access) {
-        this.name = name;
+    public User(String email, String login, String password, Long idPerson, int access) {
         this.email = email;
         this.login = login;
         this.password = password;
+        this.idPerson = idPerson;
         this.access = access;
     }
 
@@ -29,14 +29,6 @@ public class User implements Serializable{
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getEmail() {
@@ -61,6 +53,14 @@ public class User implements Serializable{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Long getIdPerson() {
+        return idPerson;
+    }
+
+    public void setIdPerson(Long idPerson) {
+        this.idPerson = idPerson;
     }
 
     public int getAccess() {
@@ -98,7 +98,7 @@ public class User implements Serializable{
 
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", name=" + name + ", email=" + email + ", login=" + login + ", password=" + password + ", access=" + access + '}';
+        return "User{" + "id=" + id + ", email=" + email + ", login=" + login + ", password=" + password + ", idPerson=" + idPerson + ", access=" + access + '}';
     }
 
 }

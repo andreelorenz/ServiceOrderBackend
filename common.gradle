@@ -21,13 +21,34 @@ repositories {
 dependencies {
     // Adding dependencies here will add the dependencies to each subproject.
     testCompile group: 'junit', name: 'junit', version: '4.10'
-        compile 'javax.ws.rs:javax.ws.rs-api:2.0.1'
+    // JAX-RS 2.0(.1)
+    compile 'javax.ws.rs:javax.ws.rs-api:2.0.1'
+    compile 'javax.ws.rs:jsr311-api:1.1.1'
+    
+    compile 'com.fasterxml:jackson-module-json-org:0.9.1'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.0.1'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.7.3'
+
+    // Jersey 2.15
+    compile 'org.glassfish.jersey.containers:jersey-container-servlet:2.15'
+    compile 'org.glassfish.jersey.media:jersey-media-json-jackson:2.22.2'
+    compile 'org.glassfish.jersey.core:jersey-common:2.22.2'
+    compile 'org.glassfish.jersey.core:jersey-server:2.22.2'
+    compile 'org.glassfish.jersey.core:jersey-client:2.22.2'
+    compile 'org.glassfish.jersey.bundles:jaxrs-ri:2.22.2'
+    
+    compile 'org.mongodb:mongo-java-driver:3.2.2'
+
  
-        // Jersey 2.15
-        compile 'org.glassfish.jersey.containers:jersey-container-servlet:2.15'
- 
-        // Servlet 3
-        compile 'javax.servlet:javax.servlet-api:3.1.0'
+    compile 'javax.servlet:javax.servlet-api:3.1.0'
+    
+    
+    compile 'org.slf4j:slf4j-log4j12:1.6.1'
+    
+    compile 'com.sun.faces:jsf-api:2.2.13'
+    
+    compile 'com.sun.faces:jsf-impl:2.2.13'
+
 }
 
 String mavenArtifactId = name

@@ -1,7 +1,7 @@
-package br.com.wso.user;
+package br.com.wso.user.controller;
 
-import br.com.wso.entity.User;
-import br.com.wso.connection.dao.UserDAO;
+import br.com.wso.user.entity.User;
+import br.com.wso.user.dao.UserDAO;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

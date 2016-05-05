@@ -11,14 +11,14 @@
         <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
         <init-param>
             <param-name>javax.ws.rs.Application</param-name>
-            <param-value>com.java.connection.WebServiceOrder</param-value>
+            <param-value>br.com.wso.service.WebServiceOrder</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
     
     <!-- The mapping for the default servlet -->
     <servlet-mapping>
-        <servlet-name>com.java.connection.WebServiceOrder</servlet-name>
+        <servlet-name>br.com.wso.service.WebServiceOrder</servlet-name>
         <url-pattern>/service-order</url-pattern>
     </servlet-mapping>
    

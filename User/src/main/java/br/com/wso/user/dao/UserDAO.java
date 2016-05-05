@@ -1,7 +1,9 @@
-package br.com.wso.connection.dao;
 
-import br.com.wso.connection.converter.UserConverter;
-import br.com.wso.entity.User;
+package br.com.wso.user.dao;
+
+import br.com.wso.connection.dao.EntityDao;
+import br.com.wso.user.converter.UserConverter;
+import br.com.wso.user.entity.User;
 import com.mongodb.DBObject;
 import java.util.ArrayList;
 import java.util.List;
